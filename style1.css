@@ -1,0 +1,161 @@
+/* style.css */
+body {
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  margin: 0;
+  padding: 0;
+  line-height: 1.7; /* Increased line height */
+  color: #444; /* Slightly lighter text color */
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3); /* Subtle gradient background */
+  min-height: 100vh; /* Ensure body covers full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+  /* Removed background-color and backdrop-filter */
+  background: linear-gradient(135deg, #43cea2, #185a9d); /* Gradient background */
+  color: white;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  position: relative; /* For pseudo-element */
+  overflow: hidden; /* Hide overflowing pseudo-element */
+  margin-bottom: 2rem;
+}
+
+header::before { /* Pseudo-element for diagonal line */
+  content: "";
+  position: absolute;
+  bottom: -50px; /* Adjust as needed */
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust as needed */
+  background: inherit; /* Inherit the gradient */
+  transform: skewY(-4deg); /* Skew the pseudo-element */
+  z-index: -1; /* Place it behind the header content */
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 5px solid white;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: #333; /* Darker heading color */
+}
+
+p.header-title {
+  font-style: italic;
+  color: #555;
+}
+
+section {
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 900px; /* Slightly wider max-width */
+  background: rgba(255, 255, 255, 0.9); /* More transparent white background */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+section:hover{
+  transform: translateY(-5px);
+}
+
+h2 {
+  color: #0056b3;
+  border-bottom: 3px solid #0056b3;
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.job,
+.project,
+.education-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: none; /* Remove border */
+  border-radius: 8px;
+  background: rgba(240, 240, 240, 0.7); /* Softer background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.job:hover,
+.project:hover,
+.education-item:hover{
+  transform: translateY(-3px);
+}
+
+.job p,
+.project p,
+.education-item p {
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+.job h3,
+.project h3,
+.education-item h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #333;
+  color: white;
+  margin-top: auto; /* Push footer to bottom */
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #003087;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section {
+      margin: 1rem;
+      padding: 1.5rem;
+  }
+
+  .profile-image{
+      width: 150px;
+      height: 150px;
+  }
+}
